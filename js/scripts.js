@@ -1,27 +1,20 @@
-$("form#favorite").submit(function() {
-    var favorite = $(["input#fruit", "input#nut", "input#band", "input#color"]).val();
+$(document).ready(function(){
 
-      fruit.push ( favorite );
-      nut.push ( favorite ) ;
-      band.push ( favorite );
-      color.push ( favorite );
+$("form#favorite").submit(function(event) {
+  debugger;
+    var fruit = $("input#fruit").val();
+    var nut = $("input#nut").val();
+    var band = $("input#band").val();
+    var color = $("input#color").val();
 
-    $("#fruit").show();
-    alert('Banana');
+    var favorite = [fruit, nut, band, color];
+    var fav2 =[];
 
-    event.preventDefault();
+      fav2.push(favorite[2],favorite[1], favorite[3]);
+      $(".list1").text( fav2[0]);
+      $(".list2").text( fav2[1]);
+      $(".list3").text( fav2[2]);
+
+  event.preventDefault();
  });
 });
-
-
-    //var nut = $("input#nut").val();
-    //var band = $("input#band").val();
-    //var color = $("input#color").val();
-    //var favorite = $(["input#fruit", "input#nut", "input#band", "input#color"]).val();
-
-    //$(".band").text(band);
-    //$(".nut").text(nut);
-    //$(".color").text(color);
-    //$(".fruit").text(fruit);
-    //$("#result").show();
-    //event.preventDefault();
